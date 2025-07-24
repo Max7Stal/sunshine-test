@@ -10,7 +10,6 @@
 ## Install
 - composer install
 - change .env file (add login and password for DB connection)
-- php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider" ???
 - php artisan migrate
 
 ## Authorization
@@ -58,6 +57,7 @@ Response
 - DELETE /api/products/{productId} — Удаление товара
 
 ### GET /api/products
+Для фильтров используйте параметры category (Поиска товара по категории) и in_stock (Поиск товаров которые есть на складе, используйте как флаг)
 Response
 {
 "products": {

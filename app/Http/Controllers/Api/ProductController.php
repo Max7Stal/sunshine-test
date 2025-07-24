@@ -22,8 +22,8 @@ class ProductController extends Controller
             $query->where('in_stock', '>', 0);
         }
 
+        $totalInStock = $query->sum('in_stock');
         $products = $query->paginate(10);
-        $totalInStock = Product::where('in_stock', '>', 0)->sum('in_stock');
 
         return response()->json([
             'products' => $products,
